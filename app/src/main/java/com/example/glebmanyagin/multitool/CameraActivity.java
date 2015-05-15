@@ -102,7 +102,9 @@ public class CameraActivity extends ActionBarActivity {
                             bmp = BitmapFactory.decodeByteArray(data, 0, data.length);
                             SimpleDateFormat df = new SimpleDateFormat("yyyyMMdd_HHmmss");
                             String title = "IMG_" + df.format(System.currentTimeMillis());
-                            MediaStore.Images.Media.insertImage(getContentResolver(), bmp, title , "PhotoMultiTool");
+                            MediaStore.Images.Media.insertImage(getContentResolver(), bmp, title, "PhotoMultiTool");
+                            Utilites.ShowToast(getApplicationContext(),title);
+
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -218,24 +220,8 @@ public class CameraActivity extends ActionBarActivity {
             e.printStackTrace();
         }
 
-        camera.startPreview();
+        Utilites.setCameraDisplayOrientation(this,getFrontCam(bFrontCam),camera);
 
-        int rotate = getWindowManager().getDefaultDisplay().getRotation();
-        switch (rotate) {
-            case Surface.ROTATION_0:
-                camera.setDisplayOrientation(270);
-                break;
-            case Surface.ROTATION_90:
-                camera.setDisplayOrientation(180);
-                break;
-            case Surface.ROTATION_180:
-                camera.setDisplayOrientation(90);
-                break;
-            case Surface.ROTATION_270:
-                camera.setDisplayOrientation(0);
-                break;
-            default:
-                break;
-        }
+        camera.startPreview();
     }
 }

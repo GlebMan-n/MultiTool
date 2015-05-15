@@ -1,10 +1,10 @@
 <resources>
-    <string name="app_name">MultiTool</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="text_flashlight_button">Фонарик</string>
+    <string name="app_name">всё в одном</string>
+    <string name="hello_world">Здесь будет компас</string>
+    <string name="action_settings">Настройки</string>
+    <string name="text_flashlight_button">Фонарь</string>
     <string name="text_compass_button">Компас</string>
-    <string name="text_photo_button">Фотоаппарат</string>
-    <string name="title_activity_camera">CameraActivity</string>
-    <string name="title_activity_compass">CompassActivity</string>
+    <string name="text_photo_button">Фото</string>
+    <string name="title_activity_camera">Фотография</string>
+    <string name="title_activity_compass">Компас</string>
 </resources>
