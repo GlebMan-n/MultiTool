@@ -44,10 +44,10 @@
             android:src="@mipmap/icon_circle"
             android:background="@null"/>
 
-        <ImageButton
+        <!--<ImageButton
             android:id="@+id/flashlight"
             android:src="@mipmap/flashlight_icon"
-            android:background="@null"/>
+            android:background="@null"/>-->
     </TableRow>
 
 

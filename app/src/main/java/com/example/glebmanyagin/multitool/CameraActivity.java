@@ -85,7 +85,7 @@ public class CameraActivity extends ActionBarActivity {
 
         ImageButton makePhotoBut = (ImageButton) findViewById(R.id.makePhotoBut);
         ImageButton anotherCamBut = (ImageButton) findViewById(R.id.anotherCam);
-        ImageButton flashLight = (ImageButton) findViewById(R.id.flashlight);
+
 
 
         makePhotoBut.setOnClickListener(new View.OnClickListener()
@@ -119,23 +119,6 @@ public class CameraActivity extends ActionBarActivity {
             {
                 bFrontCam = !bFrontCam;
                 openCam();
-            }
-        });
-
-        flashLight.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                try {
-                    if(camera == null)
-                        return;
-                    Camera.Parameters p = camera.getParameters();
-                    p.setFlashMode(Camera.Parameters.FLASH_MODE_TORCH);
-                    camera.setParameters(p);
-                    camera.startPreview();
-                }
-                catch (Exception e)
-                {
-                    Log.d("camera",e.toString());
-                }
             }
         });
 
@@ -199,7 +182,6 @@ public class CameraActivity extends ActionBarActivity {
     private int getFrontCam(boolean front)
     {
         if(numCAMS <2) {
-
             return 0;
         }
         int iFront = 1;
