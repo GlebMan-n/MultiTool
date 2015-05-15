@@ -24,6 +24,7 @@ import android.widget.Spinner;
 
 public class MultiToolActivity extends ActionBarActivity {
 
+    Camera camera = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +69,29 @@ public class MultiToolActivity extends ActionBarActivity {
 
     public void onFlashlightButPressed(View view)
     {
-        //TODO
-        //включить фонарь
+        if (camera != null) {
+            camera.stopPreview();
+            camera.release();
+            camera = null;
+            return;
+        }
+
+        camera = Camera.open();
+        Camera.Parameters p = camera.getParameters();
+        p.setFlashMode(Parameters.FLASH_MODE_TORCH);
+        camera.setParameters(p);
+        camera.startPreview();
+
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (camera != null) {
+            camera.stopPreview();
+            camera.release();
+            camera = null;
+        }
     }
 
 }
