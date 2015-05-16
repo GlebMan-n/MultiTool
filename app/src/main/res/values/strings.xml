@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">всё в одном</string>
+    <string name="app_name">Всё в одном</string>
     <string name="hello_world">Здесь будет компас</string>
     <string name="action_settings">Настройки</string>
     <string name="text_flashlight_button">Фонарь</string>
